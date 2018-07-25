@@ -32,3 +32,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tests/XRNodePhysicalTryGets/XRNodePhysicalTryGets.unity
     guid: 00000000000000000000000000000000
+  m_configObjects: {}

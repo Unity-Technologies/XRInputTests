@@ -63,6 +63,7 @@ PlayerSettings:
   use32BitDisplayBuffer: 1
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
+  androidStartInFullscreen: 1
   androidBlitType: 0
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
@@ -160,7 +161,7 @@ PlayerSettings:
   buildNumber:
     iOS: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 23
+  AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -248,7 +249,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
+  AndroidKeystoreName: C:/Users/benjamins/Desktop/password123456.keystore
   AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
@@ -533,8 +534,6 @@ PlayerSettings:
   switchDataLossConfirmation: 0
   switchSupportedNpadStyles: 3
   switchNativeFsCacheSize: 32
-  switchIsHoldTypeHorizontal: 0
-  switchSupportedNpadCount: 8
   switchSocketConfigEnabled: 0
   switchTcpInitialSendBufferSize: 32
   switchTcpInitialReceiveBufferSize: 64
@@ -591,6 +590,7 @@ PlayerSettings:
   ps4pnGameCustomData: 1
   playerPrefsSupport: 0
   enableApplicationExit: 0
+  resetTempFolder: 1
   restrictedAudioUsageRights: 0
   ps4UseResolutionFallback: 0
   ps4ReprojectionSupport: 0
@@ -679,9 +679,11 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend:
-    Metro: 1
+    Android: 0
+    Metro: 2
     Standalone: 0
   il2cppCompilerConfiguration: {}
+  managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
@@ -764,10 +766,18 @@ PlayerSettings:
     UNet: 0
     Unity_Ads: 0
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 3
+  facebookAppId: 
+  facebookCookies: 1
+  facebookLogging: 1
+  facebookStatus: 1
+  facebookXfbml: 0
+  facebookFrictionlessRequests: 1
+  apiCompatibilityLevel: 6
   cloudProjectId: 7a8b4d10-48f5-45de-905b-dfb5b898b6c2
+  framebufferDepthMemorylessMode: 0
   projectName: 
   organizationId: qa-project-share
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
+  legacyClampBlendShapeWeights: 1
