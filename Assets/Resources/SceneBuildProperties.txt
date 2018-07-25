@@ -1,9 +1,9 @@
-<name>CameraAndTrackedPoseDriver</name><target>0</target>
-<name>Generic Buttons and Axes</name><target>0</target>
-<name>GetJoystickNames</name><target>0</target>
-<name>GetNodeStates</name><target>0</target>
-<name>Node Events</name><target>0</target>
-<name>SupportedAndLoadedDevices</name><target>0</target>
-<name>Template</name><target>0</target>
-<name>TrackingFeatures</name><target>0</target>
-<name>XRNodePhysicalTryGets</name><target>0</target>
+<name>CameraAndTrackedPoseDriver</name><target>1</target>
+<name>Generic Buttons and Axes</name><target>2</target>
+<name>GetJoystickNames</name><target>1</target>
+<name>GetNodeStates</name><target>1</target>
+<name>Node Events</name><target>1</target>
+<name>SupportedAndLoadedDevices</name><target>1</target>
+<name>Template</name><target>1</target>
+<name>TrackingFeatures</name><target>1</target>
+<name>XRNodePhysicalTryGets</name><target>1</target>
