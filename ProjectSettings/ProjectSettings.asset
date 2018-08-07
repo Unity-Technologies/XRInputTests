@@ -112,7 +112,6 @@ PlayerSettings:
   psp2PowerMode: 0
   psp2AcquireBGM: 1
   vulkanEnableSetSRGBWrite: 0
-  vulkanUseSWCommandBuffers: 0
   m_SupportedAspectRatios:
     4:3: 1
     5:4: 1
@@ -145,6 +144,7 @@ PlayerSettings:
       dashSupport: 0
     enable360StereoCapture: 0
   protectGraphicsMemory: 0
+  enableFrameTimingStats: 0
   useHDRDisplay: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
@@ -242,7 +242,6 @@ PlayerSettings:
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
   appleEnableProMotion: 0
-  vulkanEditorSupport: 0
   clonedFromGUID: 3355557de5a687e44a6eface0a816616
   templatePackageId: 
   templateDefaultScene: 
@@ -676,6 +675,7 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
   webGLLinkerTarget: 0
+  webGLThreadsSupport: 0
   scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -705,6 +705,8 @@ PlayerSettings:
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
   metroWideTileShowName: 0
+  metroSupportStreamingInstall: 0
+  metroLastRequiredScene: 0
   metroDefaultTileSize: 1
   metroTileForegroundText: 1
   metroTileBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -765,6 +767,17 @@ PlayerSettings:
     Purchasing: 0
     UNet: 0
     Unity_Ads: 0
+  luminIcon:
+    m_Name: 
+    m_ModelFolderPath: 
+    m_PortalFolderPath: 
+  luminCert:
+    m_CertPath: 
+    m_PrivateKeyPath: 
+  luminIsChannelApp: 0
+  luminVersion:
+    m_VersionCode: 1
+    m_VersionName: 
   facebookSdkVersion: 7.9.4
   facebookAppId: 
   facebookCookies: 1
