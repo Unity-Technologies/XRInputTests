@@ -28,7 +28,7 @@ To add a test scene within the complete project
 - Add your test to the build settings by navigating to Menu Bar -> Window -> XR Test Config and pressing the Update Build Settings button.
 - You can refresh the XR Tests window using the "Refresh" button located at the top of the window.
 - Before committing the new test in Mercurial be sure to verify it by:
---- Running the test in playmode - no consolde debug logs, warnings, or errors!
+--- Running the test in playmode - no consolde debug logs, warnings, or errors! Launch the test by pressing the "Run" button under Window->XR Tests panel -> YourNewTestName
 --- Running the test in a build
 --- Export the test, make sure it works in playmode and as a build - no consolde debug logs, warnings, or errors!
 

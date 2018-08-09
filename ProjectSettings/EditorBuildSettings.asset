@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Tests/GetJoystickNames/GetJoystickNames.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Tests/GetNodeNames/GetNodeNames.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
     path: Assets/Tests/GetNodeStates/GetNodeStates.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
@@ -32,3 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tests/XRNodePhysicalTryGets/XRNodePhysicalTryGets.unity
     guid: 00000000000000000000000000000000
+  m_configObjects: {}
