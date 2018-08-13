@@ -30,7 +30,7 @@ To add a test scene within the complete project
 - Before committing the new test in Mercurial be sure to verify it by:
 --- Running the test in playmode - no consolde debug logs, warnings, or errors! Launch the test by pressing the "Run" button under Window->XR Tests panel -> YourNewTestName
 --- Running the test in a build
---- Export the test, make sure it works in playmode and as a build - no consolde debug logs, warnings, or errors!
+--- Export the test, make sure it works in playmode and as a build - no consolde debug logs, warnings, or errors!  You should be able to navigate between scenes with the arrows forward and backward from the new test.
 
 ######################
 ### Best Practices ###
