@@ -14,7 +14,6 @@ public class XRNodeCapabilities : MonoBehaviour {
     public Text supportsImpulse;
     public Text supportsBuffer;
     public Text bufferFreqHz;
-    public Text bufferMaxSize;
     
     
 	void Update () {
@@ -26,6 +25,5 @@ public class XRNodeCapabilities : MonoBehaviour {
         supportsImpulse.text = caps.supportsImpulse.ToString();
         supportsBuffer.text = caps.supportsBuffer.ToString();
         bufferFreqHz.text = caps.bufferFrequencyHz.ToString();
-        bufferMaxSize.text = caps.bufferMaxSize.ToString();
 	}
 }

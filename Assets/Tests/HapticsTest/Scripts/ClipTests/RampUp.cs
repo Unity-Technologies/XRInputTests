@@ -14,10 +14,11 @@ public class RampUp : ClipTestButton {
             return false;
 
         // Generate actual clip
-        clip = new byte[caps.bufferMaxSize];
-        for(int i = 0; i < caps.bufferMaxSize; i++)
+        int clipTime = (int)(caps.bufferFrequencyHz * 2); // 2 seconds
+        clip = new byte[clipTime];
+        for(int i = 0; i < clipTime; i++)
         {
-            clip[i] = (byte)((i / (float)caps.bufferMaxSize) * byte.MaxValue);
+            clip[i] = (byte)((i / (float)clipTime) * byte.MaxValue);
         }
 
         return true;

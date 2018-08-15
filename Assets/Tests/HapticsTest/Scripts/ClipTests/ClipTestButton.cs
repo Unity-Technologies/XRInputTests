@@ -31,8 +31,9 @@ public class ClipTestButton : MonoBehaviour {
 
         // This base implementation generates a very boring clip of solid intensity
         // over the max clip time.
-        clip = new byte[caps.bufferMaxSize];
-        for(int i = 0; i < caps.bufferMaxSize; i++)
+        int clipTime = (int)(caps.bufferFrequencyHz * 2); // 2 seconds
+        clip = new byte[clipTime];
+        for(int i = 0; i < clipTime; i++)
         {
             clip[i] = byte.MaxValue;
         }

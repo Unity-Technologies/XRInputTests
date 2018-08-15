@@ -14,8 +14,9 @@ public class DutyCycle_50 : ClipTestButton {
             return false;
 
         // Generate actual clip
-        clip = new byte[caps.bufferMaxSize];
-        for(int i = 0; i < caps.bufferMaxSize; i++)
+        int clipTime = (int)(caps.bufferFrequencyHz * 2); // 2 seconds
+        clip = new byte[clipTime];
+        for(int i = 0; i < clipTime; i++)
         {
             clip[i] = (i % 2 == 0) ? byte.MaxValue : (byte)0;
         }

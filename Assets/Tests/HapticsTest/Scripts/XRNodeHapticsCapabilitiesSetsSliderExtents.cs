@@ -42,6 +42,10 @@ public class XRNodeHapticsCapabilitiesSetsSliderExtents : MonoBehaviour {
                 m_Slider.maxValue = 1f;
                 m_Slider.minValue = 0;
                 break;
+            case DriveType.Duration:
+                m_Slider.maxValue = 10f;
+                m_Slider.minValue = 0;
+                break;
         }
 
         m_Slider.value = m_Slider.maxValue;
