@@ -26,7 +26,7 @@ public class ClipTestButton : MonoBehaviour {
     {
         HapticCapabilities caps = new HapticCapabilities();
 
-        if (!InputHaptic.TryGetCapabilities(node, out caps))
+        if (!InputDevices.GetDeviceAtXRNode(node).TryGetHapticCapabilities(out caps))
             return false;
 
         // This base implementation generates a very boring clip of solid intensity
@@ -44,8 +44,8 @@ public class ClipTestButton : MonoBehaviour {
     void PlayClip()
     {
         if (GenerateClip(XRNode.LeftHand, ref m_LeftClip))
-            InputHaptic.SendBuffer(XRNode.LeftHand, 0, m_LeftClip);
+            InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).SendHapticBuffer(0, m_LeftClip);
         if (GenerateClip(XRNode.RightHand, ref m_RightClip))
-            InputHaptic.SendBuffer(XRNode.RightHand, 0, m_RightClip);
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand).SendHapticBuffer(0, m_RightClip);
     }
 }

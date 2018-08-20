@@ -28,12 +28,12 @@ public class ImpulseTestButton : MonoBehaviour {
     {
         HapticCapabilities caps = new HapticCapabilities();
         
-        if (InputHaptic.TryGetCapabilities(XRNode.LeftHand, out caps))
+        if (InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).TryGetHapticCapabilities(out caps))
         {
             SendImpulseToNode(XRNode.LeftHand, caps);
         }
 
-        if (InputHaptic.TryGetCapabilities(XRNode.RightHand, out caps))
+        if (InputDevices.GetDeviceAtXRNode(XRNode.RightHand).TryGetHapticCapabilities(out caps))
         {
             SendImpulseToNode(XRNode.RightHand, caps);
         }
@@ -44,12 +44,11 @@ public class ImpulseTestButton : MonoBehaviour {
         float amplitude = (amplitudeSlider != null) ? (amplitudeSlider.value) : 1f;
         float duration  = (durationSlider != null) ? (durationSlider.value) : 1f;
         float frequency = (frequencySlider != null) ? (frequencySlider.value) : 1f;
-        
-        InputHaptic.SendImpulse(node, 0, amplitude, frequency, duration);
+
+        InputDevices.GetDeviceAtXRNode(node).SendHapticImpulse(0, amplitude, duration);
         Debug.Log("Impulse sent to " + node 
             + "\n" + "Amplitude = " + amplitude
             + "\n" + "Duration = " + duration
-            + "\n" + "Frequency = " + frequency
             );
     }
 }

@@ -18,7 +18,7 @@ public class XRNodeCapabilities : MonoBehaviour {
     
 	void Update () {
         HapticCapabilities caps = new HapticCapabilities();
-        InputHaptic.TryGetCapabilities(node, out caps);
+        InputDevices.GetDeviceAtXRNode(node).TryGetHapticCapabilities(out caps);
 
         nodeCheck.text = node.ToString();
         numChannels.text = caps.numChannels.ToString();

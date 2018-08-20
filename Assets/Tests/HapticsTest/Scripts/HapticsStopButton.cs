@@ -21,7 +21,7 @@ public class HapticsStopButton : MonoBehaviour {
     private void StopHaptics()
     {
         Debug.Log("Sending Haptic Stop Command to both hands");
-        InputHaptic.Stop(XRNode.LeftHand);
-        InputHaptic.Stop(XRNode.RightHand);
+        InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).StopHaptics();
+        InputDevices.GetDeviceAtXRNode(XRNode.RightHand).StopHaptics();
     }
 }
