@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class StickProxy : MonoBehaviour
 {
-
-
     public string horizontalAxisId;
     public string verticalAxisId;
     public string axisName;
@@ -16,14 +14,17 @@ public class StickProxy : MonoBehaviour
     public Slider verticalSliderComponent;
     public Text valueTextComponent;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
         if (textComponent != null)
         {
             textComponent.text = axisName;
         }
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
         float horizontalValue = Input.GetAxis(horizontalAxisId);
         if (horizontalSliderComponent != null)
         {

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
-public class AxisProxy : MonoBehaviour
+public class AxisUsageProxy : MonoBehaviour
 {
-    public string axisId;
-    public string axisName;   
+    public XRNode node;
+    public string usageName;   
 
     public Text textComponent;
     public Slider sliderComponent;
@@ -16,14 +17,18 @@ public class AxisProxy : MonoBehaviour
     {
         if (textComponent != null)
         {
-            textComponent.text = axisName;
+            textComponent.text = usageName;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float value = Input.GetAxis(axisId);
+        float value;
+
+        if (!InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<float>(usageName), out value))
+            return;
+
         if (sliderComponent != null)
         {
             sliderComponent.value = value;

@@ -8,4 +8,5 @@
 <name>SupportedAndLoadedDevices</name><target>0</target>
 <name>Template</name><target>0</target>
 <name>TrackingFeatures</name><target>0</target>
+<name>Usages</name><target>0</target>
 <name>XRNodePhysicalTryGets</name><target>0</target>
