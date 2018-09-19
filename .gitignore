@@ -6,6 +6,10 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# Don't include osig files in what will become a public repository
+Assets/Plugins.meta
+Assets/Plugins/
+
 # Visual Studio cache directory
 .vs/
 
