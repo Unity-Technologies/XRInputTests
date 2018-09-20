@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -7,14 +7,14 @@ using System.IO;
 using System.Linq;
 
 [InitializeOnLoad]
-public class BuildOverride : MonoBehaviour {
-
+public class BuildOverride : MonoBehaviour
+{
     public static bool override_build = true;
 
     public static void SetOverride(bool state)
     {
         override_build = state;
-        if(override_build)
+        if (override_build)
         {
             Action<BuildPlayerOptions> build_action = Build;
             BuildPlayerWindow.RegisterBuildPlayerHandler(build_action);
@@ -25,19 +25,18 @@ public class BuildOverride : MonoBehaviour {
         }
     }
 
-
     static BuildOverride()
     {
         SetOverride(true);
     }
-    
+
     public static void Build(BuildPlayerOptions options)
     {
         if (!BuildPipeline.isBuildingPlayer)
         {
             BuildTarget target = options.target;// EditorUserBuildSettings.activeBuildTarget;
             bool is_mobile = !target.ToString().Contains("Standalone");
-            
+
             if (options.locationPathName != "")
             {
                 List<string> scenes = new List<string>();
@@ -75,7 +74,6 @@ public class BuildOverride : MonoBehaviour {
 
                 BuildPipeline.BuildPlayer(options);
             }
-
         }
         else
         {

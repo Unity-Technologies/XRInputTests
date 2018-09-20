@@ -20,7 +20,7 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
     {
         Repaint();
     }
-    
+
     public int callbackOrder { get { return 0; } }
 
     public static void OnSceneAssetChanged()
@@ -47,7 +47,7 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
 
         Repaint();
     }
-    
+
     void OnEnable()
     {
         titleContent = new GUIContent("XR Tests");
@@ -72,12 +72,12 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
             GUILayout.FlexibleSpace();
 
             bool override_toggle = ToolbarToggle(BuildOverride.override_build, "Override Scene List", "True to override the scenes in the Build Setting's scene list with the settings below.");
-            if(override_toggle != BuildOverride.override_build)
+            if (override_toggle != BuildOverride.override_build)
             {
                 BuildOverride.SetOverride(override_toggle);
             }
         }
-        
+
 
         DrawTestList();
     }
@@ -96,12 +96,12 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
         }
         return null;
     }
-    
+
     static bool ToolbarButton(string title, string tooltip)
     {
         return GUILayout.Button(new GUIContent(title, tooltip), EditorStyles.toolbarButton);
     }
-    
+
     static bool ToolbarToggle(bool value, string title, string tooltip)
     {
         return GUILayout.Toggle(value, new GUIContent(title, tooltip), EditorStyles.toolbarButton);
@@ -139,14 +139,14 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
         }
 
         StreamWriter writer = new StreamWriter(path, false, Encoding.ASCII);
-        
+
         foreach (TestEntryUI entry in m_Tests)
         {
             entry.WriteLine(writer);
         }
-        
+
         writer.Close();
-        
+
         UnityEditor.AssetDatabase.Refresh();
     }
 
@@ -170,24 +170,24 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
             {
                 old_entries.Add(new TestEntryUI(line));
             }
-
-        } while (line != null);
+        }
+        while (line != null);
 
         reader.Close();
 
         //Compare existing contents with database file.  Overwrite properties (only) in new database file with old database file entries.  Delete old database entires
-        foreach(TestEntryUI entry in m_Tests)
+        foreach (TestEntryUI entry in m_Tests)
         {
-            foreach(TestEntryUI old_entry in old_entries)
+            foreach (TestEntryUI old_entry in old_entries)
             {
-                if(old_entry.m_TestName == entry.m_TestName)
+                if (old_entry.m_TestName == entry.m_TestName)
                 {
                     entry.CopyProperties(old_entry);
                 }
             }
         }
     }
-    
+
     public class TestEntryUI
     {
         string m_ScenePath;
@@ -200,7 +200,7 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
         //Constructs from a tagged db string.  These are generally created during UpdateFromFile as temporary items for comparison with the current scene list contents.
         public TestEntryUI(string db_string)
         {
-            Func<string, string, string> get_string_by_tag = delegate (string full_string, string tag) {
+            Func<string, string, string> get_string_by_tag = delegate(string full_string, string tag) {
                 Match match = Regex.Match(full_string, ("<" + tag + ">(.*?)<\\/" + tag + ">"));
                 if (match.Success)
                 {
@@ -220,12 +220,11 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
             int build_target_value = Convert.ToInt32(get_string_by_tag(db_string, "target"));
             foreach (BuildTarget t in targets)
             {
-                if( (int)t == build_target_value)
+                if ((int)t == build_target_value)
                 {
                     build_target = t;
                 }
             }
-
         }
 
         //Copies parameters from a different source.
@@ -291,12 +290,11 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
         void DrawBuildSettings()
         {
             BuildTarget new_target = (BuildTarget)EditorGUILayout.EnumPopup(build_target);
-            if(new_target != build_target)
+            if (new_target != build_target)
             {
                 build_target = new_target;
                 XRTestsWindow.OverwriteDatabase();
             }
-
         }
 
         void DrawLabel()

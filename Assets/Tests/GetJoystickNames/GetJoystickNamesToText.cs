@@ -1,12 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class GetJoystickNamesToText : MonoBehaviour {
-    
+public class GetJoystickNamesToText : MonoBehaviour
+{
     public Text joystickNamesText;
 
     void Start()
@@ -14,7 +14,6 @@ public class GetJoystickNamesToText : MonoBehaviour {
         ShowJoystickNames();
         StartCoroutine("UpdateJoystickNamesEveryDelay", 3);
     }
-
 
     IEnumerator UpdateJoystickNamesEveryDelay(float delayInSeconds)
     {
@@ -24,7 +23,7 @@ public class GetJoystickNamesToText : MonoBehaviour {
         StartCoroutine("UpdateJoystickNamesEveryDelay", delayInSeconds);
     }
 
-	void ShowJoystickNames()
+    void ShowJoystickNames()
     {
         string displayTextAccumulator = "";
         int joystickNumber = 0;
