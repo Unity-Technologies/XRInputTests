@@ -1,12 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class GetNodeNamesToText : MonoBehaviour {
-    
+public class GetNodeNamesToText : MonoBehaviour
+{
     public Text nodeNamesText;
 
     void Start()
@@ -14,7 +14,6 @@ public class GetNodeNamesToText : MonoBehaviour {
         ShowNodeNames();
         StartCoroutine("UpdateNodeNamesEveryDelay", 3);
     }
-
 
     IEnumerator UpdateNodeNamesEveryDelay(float delayInSeconds)
     {
@@ -24,7 +23,7 @@ public class GetNodeNamesToText : MonoBehaviour {
         StartCoroutine("UpdateNodeNamesEveryDelay", delayInSeconds);
     }
 
-	void ShowNodeNames()
+    void ShowNodeNames()
     {
         string displayTextAccumulator = "";
         int nodeNumber = 0;

@@ -1,33 +1,33 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomOrbit : MonoBehaviour {
-
+public class RandomOrbit : MonoBehaviour
+{
     public GameObject m_OrbitTarget;
 
     public Vector3 m_EulerFactors = Vector3.one;
     public float m_VelocityMagnitude;
     public Vector3 m_OffsetScale = Vector3.one;
-    
+
     public float m_Radius;
     private Vector3 m_Euler;
     private Vector3 m_EulerVelocity;
     private Vector3 m_PosePosition;
 
-    
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         m_EulerVelocity = Vector3.forward * m_VelocityMagnitude;
         m_PosePosition = transform.position;
         UpdatePosition();
-	}
-	
+    }
+
     private void UpdatePosition()
     {
         m_EulerVelocity = m_VelocityMagnitude * m_EulerFactors;
-        
+
         m_Euler += m_EulerVelocity * Time.deltaTime;
 
         Quaternion rot = Quaternion.Euler(m_Euler);
@@ -43,8 +43,9 @@ public class RandomOrbit : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
         UpdatePosition();
-	}
+    }
 }

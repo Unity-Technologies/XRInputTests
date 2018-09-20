@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,15 +6,16 @@ using UnityEngine.XR;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class ClipTestButton : MonoBehaviour {
-
+public class ClipTestButton : MonoBehaviour
+{
     private byte[] m_LeftClip = null;
     private byte[] m_RightClip = null;
-	
-	// Update is called once per frame
-	void OnEnable () {
+
+    // Update is called once per frame
+    void OnEnable()
+    {
         GetComponent<Button>().onClick.AddListener(PlayClip);
-	}
+    }
 
     void OnDisable()
     {
@@ -33,7 +34,7 @@ public class ClipTestButton : MonoBehaviour {
         // over the max clip time.
         int clipTime = (int)(caps.bufferFrequencyHz * 2); // 2 seconds
         clip = new byte[clipTime];
-        for(int i = 0; i < clipTime; i++)
+        for (int i = 0; i < clipTime; i++)
         {
             clip[i] = byte.MaxValue;
         }

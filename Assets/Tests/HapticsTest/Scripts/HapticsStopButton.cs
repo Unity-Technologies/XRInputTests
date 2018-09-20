@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +6,9 @@ using UnityEngine.XR;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class HapticsStopButton : MonoBehaviour {
-
-	private void OnEnable()
+public class HapticsStopButton : MonoBehaviour
+{
+    private void OnEnable()
     {
         GetComponent<Button>().onClick.AddListener(StopHaptics);
     }

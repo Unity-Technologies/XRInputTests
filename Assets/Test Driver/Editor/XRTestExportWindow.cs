@@ -28,7 +28,7 @@ public class XRTestExportWindow : EditorWindow
             var testScene = MergeTestAndStartScenes();
 
             var extraScriptsRequired = new HashSet<string>();
-            
+
             //RemoveTestComponentsWeDontNeed(testScene);
             RemoveCameraAnchor(testScene);
             //HandleTestUi(testScene, extraScriptsRequired);
@@ -145,7 +145,8 @@ public class XRTestExportWindow : EditorWindow
     {
         if (Directory.Exists(outputProjectPath))
         {
-            foreach (var file in Directory.GetFiles(outputProjectPath, "*", SearchOption.AllDirectories)) {
+            foreach (var file in Directory.GetFiles(outputProjectPath, "*", SearchOption.AllDirectories))
+            {
                 File.Delete(file);
             }
             Directory.Delete(outputProjectPath, true);
@@ -160,7 +161,7 @@ public class XRTestExportWindow : EditorWindow
         var filesToCopy = sceneDependencies.Concat(extraScriptsRequired).Distinct();
         foreach (var file in filesToCopy)
             CopyFile(rootPath, outputProjectPath, file);
-        
+
         CopyFile(rootPath, outputProjectPath, "Assets/Test Driver/InputMobileForSceneChange.cs");
         CopyFile(rootPath, outputProjectPath, "Assets/README.txt");
     }

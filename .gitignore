@@ -33,6 +33,9 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 
+# Unity3D formatting tool artifacts
+*.preformat.bak
+
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
