@@ -1,12 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class NodeEventsToText : MonoBehaviour {
-    
+public class NodeEventsToText : MonoBehaviour
+{
     public Text eventsText;
     public int m_QueueMaximumSize = 15;
     [Tooltip("After the queue is full, no longer accept new values.")]
@@ -21,7 +21,7 @@ public class NodeEventsToText : MonoBehaviour {
         m_Events = new Queue<string>();
     }
 
-	private void OnEnable()
+    private void OnEnable()
     {
         InputTracking.nodeAdded += OnNodeAdded;
         InputTracking.nodeRemoved += OnNodeRemoved;
@@ -37,19 +37,22 @@ public class NodeEventsToText : MonoBehaviour {
         InputTracking.trackingLost -= OnTrackingLost;
     }
 
-    void OnNodeAdded (XRNodeState NodeState)
+    void OnNodeAdded(XRNodeState NodeState)
     {
         AddEventToQueue("NodeAdded: " + NodeState.nodeType);
     }
-    void OnNodeRemoved (XRNodeState NodeState)
+
+    void OnNodeRemoved(XRNodeState NodeState)
     {
         AddEventToQueue("NodeRemoved: " + NodeState.nodeType);
     }
-    void OnTrackingAcquired (XRNodeState NodeState)
+
+    void OnTrackingAcquired(XRNodeState NodeState)
     {
         AddEventToQueue("TrackingAquired: " + NodeState.nodeType);
     }
-    void OnTrackingLost (XRNodeState NodeState)
+
+    void OnTrackingLost(XRNodeState NodeState)
     {
         AddEventToQueue("TrackingLost: " + NodeState.nodeType);
     }
@@ -66,7 +69,7 @@ public class NodeEventsToText : MonoBehaviour {
         EventDescriptor = "<" + m_EventNumber + "> " + EventDescriptor;
         m_EventNumber++;
         m_Events.Enqueue(EventDescriptor);
-        
+
         while (m_Events.Count > m_QueueMaximumSize)
         {
             m_Events.Dequeue();

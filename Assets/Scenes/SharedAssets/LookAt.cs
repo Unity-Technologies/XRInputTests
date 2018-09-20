@@ -1,16 +1,17 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAt : MonoBehaviour {
-
+public class LookAt : MonoBehaviour
+{
     public Transform m_Target;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         UpdateOrientation();
     }
-	
+
     public void UpdateOrientation()
     {
         if (m_Target != null)
@@ -19,9 +20,9 @@ public class LookAt : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
         UpdateOrientation();
-
     }
 }

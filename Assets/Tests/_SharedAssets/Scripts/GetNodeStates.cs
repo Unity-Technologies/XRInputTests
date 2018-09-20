@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.XR;
 
-public class GetNodeStates : MonoBehaviour {
-
+public class GetNodeStates : MonoBehaviour
+{
     Dictionary<ulong, GameObject> m_NodeStates;
 
     void Awake()
@@ -67,10 +67,9 @@ public class GetNodeStates : MonoBehaviour {
                 Destroy(tempGameObject);
             }
         }
-
     }
 
-    void AddNewNodeVisual (XRNodeState nodeState)
+    void AddNewNodeVisual(XRNodeState nodeState)
     {
         GameObject newNodeVisual = GameObject.CreatePrimitive(PrimitiveType.Cube);
         newNodeVisual.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);

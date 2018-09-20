@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,10 +20,9 @@ public class ButtonProxy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
-
-        if(imageComponent != null)
+        if (imageComponent != null)
         {
             if (Input.GetButton(buttonId))
             {
@@ -33,6 +32,6 @@ public class ButtonProxy : MonoBehaviour
             {
                 imageComponent.color = Color.red;
             }
-        }             
-	}
+        }
+    }
 }

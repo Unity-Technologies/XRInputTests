@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,8 +32,8 @@ public class NodeStateDisplay : MonoBehaviour
     void Awake()
     {
     }
-    
-    void Update ()
+
+    void Update()
     {
         if (NodeTitle_Text != null)
         {
@@ -44,17 +44,17 @@ public class NodeStateDisplay : MonoBehaviour
         UnityEngine.XR.InputTracking.GetNodeStates(nodeStates);
 
         XRNodeState? state = null;
-        
-        foreach(XRNodeState nodeState in nodeStates)
+
+        foreach (XRNodeState nodeState in nodeStates)
         {
-            if( nodeState.nodeType == m_Node)
+            if (nodeState.nodeType == m_Node)
             {
                 state = nodeState;
                 break;
             }
         }
-        
-        if(state.HasValue)
+
+        if (state.HasValue)
         {
             XRNodeState node = state.Value;
             Vector3 tempVector;
@@ -88,10 +88,9 @@ public class NodeStateDisplay : MonoBehaviour
             SetImageColor(AngularVelocity_Image, false);
             SetImageColor(AngularAcceleration_Image, false);
         }
-
     }
 
-    private string Vector3ToFieldText (Vector3 inVec)
+    private string Vector3ToFieldText(Vector3 inVec)
     {
         return "x = " + inVec.x.ToString("+000.000; -000.000; +000.000")
             + "\ny = " + inVec.y.ToString("+000.000; -000.000; +000.000")

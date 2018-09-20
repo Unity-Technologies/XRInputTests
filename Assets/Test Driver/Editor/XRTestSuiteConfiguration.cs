@@ -50,7 +50,7 @@ public class XRTestSuiteConfiguration
 
     IEnumerable<string> ScenesToSkipByPlatform()
     {
-        // This function is a stub for now.  
+        // This function is a stub for now.
         // If it becomes useful again, use an if statement like this:
         //
         //if (buildTarget == BuildTarget.Android)
@@ -66,7 +66,7 @@ public class XRTestSuiteConfiguration
 
     IEnumerable<string> ScenesToSkipBySdk()
     {
-        // This function is a stub for now.  
+        // This function is a stub for now.
         // If it becomes useful again, use an if statement like this:
         //
         //if (xrSdk != XRSdkDescription.s_Oculus)
