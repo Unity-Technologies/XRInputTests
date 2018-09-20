@@ -30,7 +30,7 @@ public class XRInput : BaseInput
         // Doesn't work on 18.3.0a9 - fix if necessary
         //if (Application.isMobilePlatform)
         //{
-        
+
 //#if UNITY_HAS_GOOGLEVR && !UNITY_IOS
 //            if (GvrController.State == GvrConnectionState.Connected)
 //            {
@@ -44,7 +44,7 @@ public class XRInput : BaseInput
 //            return Input.GetMouseButton(0);
 //#endif
 //        }
-        return 
+        return
             Input.GetButton("Button0") ||
             Input.GetButton("Button1") ||
             Input.GetButton("Button2") ||
@@ -65,7 +65,7 @@ public class XRInput : BaseInput
             Input.GetButton("Button17") ||
             Input.GetButton("Button18") ||
             Input.GetButton("Button19")
-            ;
+        ;
     }
 
     public override bool GetMouseButtonDown(int button)
@@ -89,7 +89,7 @@ public class XRInput : BaseInput
 //            return Input.GetMouseButtonDown(0);
 //#endif
 //        }
-        return 
+        return
             Input.GetButtonDown("Button0") ||
             Input.GetButtonDown("Button1") ||
             Input.GetButtonDown("Button2") ||
@@ -110,7 +110,7 @@ public class XRInput : BaseInput
             Input.GetButtonDown("Button17") ||
             Input.GetButtonDown("Button18") ||
             Input.GetButtonDown("Button19")
-            ;
+        ;
     }
 
     public override bool GetMouseButtonUp(int button)
@@ -134,7 +134,7 @@ public class XRInput : BaseInput
 //            return Input.GetMouseButtonUp(0);
 //#endif
 //        }
-        return 
+        return
             Input.GetButtonDown("Button0") ||
             Input.GetButtonDown("Button1") ||
             Input.GetButtonDown("Button2") ||
@@ -155,7 +155,7 @@ public class XRInput : BaseInput
             Input.GetButtonDown("Button17") ||
             Input.GetButtonDown("Button18") ||
             Input.GetButtonDown("Button19")
-            ;
+        ;
     }
 
     public override bool GetButtonDown(string buttonName)

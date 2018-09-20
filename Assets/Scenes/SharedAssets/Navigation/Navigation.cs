@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Navigation : MonoBehaviour {
-
+public class Navigation : MonoBehaviour
+{
     private static Navigation m_Instance = null;
     public static bool loadingScene { get; private set; }
 
@@ -38,37 +38,36 @@ public class Navigation : MonoBehaviour {
         }
         //SceneManager.LoadScene(nextSceneIndex, LoadSceneMode.Single);
     }
-    
-    
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake()
+    {
         m_Instance = this;
-	}
+    }
 
     void Start()
     {
         loadingScene = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
     private void LoadSceneAtIndex(int index)
     {
         Debug.Log("LoadSceneAtIndex: " + index);
         NavigationArrow[] arrows = GetComponentsInChildren<NavigationArrow>();
-        foreach(NavigationArrow arrow in arrows)
+        foreach (NavigationArrow arrow in arrows)
         {
             MeshRenderer renderer = arrow.GetComponent<MeshRenderer>();
-            if(renderer != null)
+            if (renderer != null)
             {
                 renderer.material.SetColor("_TintColor", Color.white);
             }
         }
-        
+
         loadingScene = true;
 
         StartCoroutine(LoadScene(index));

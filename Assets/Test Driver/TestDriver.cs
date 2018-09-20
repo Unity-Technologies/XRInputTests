@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 // Start Scene must be Scene 0 in the build settings
 // To run a test in playmode, load both the start scene and a test scene.  The test scene should be the active scene.
 //
-public class TestDriver : MonoBehaviour {
-
+public class TestDriver : MonoBehaviour
+{
     public Text SceneNameText;
     public Text SceneDescriptionText;
 
-    private int m_CurrentSceneIndex {get { return SceneManager.GetActiveScene().buildIndex; } set { } }
+    private int m_CurrentSceneIndex {get { return SceneManager.GetActiveScene().buildIndex; } set {} }
 
     private bool m_FlagMoveToNextScene;
     private bool m_FlagMoveToPreviousScene;
@@ -54,7 +54,7 @@ public class TestDriver : MonoBehaviour {
     {
         int nextLevel = (m_CurrentSceneIndex + 1) % (SceneManager.sceneCountInBuildSettings);
         if (nextLevel == 0) { nextLevel = 1; }
-        
+
         RunTest(nextLevel);
     }
 
@@ -88,7 +88,7 @@ public class TestDriver : MonoBehaviour {
 
     private void UpdateInstructionsUI()
     {
-        SceneNameText.text = m_CurrentSceneIndex + " / " + (SceneManager.sceneCountInBuildSettings-1) + " - " + SceneManager.GetActiveScene().name;
+        SceneNameText.text = m_CurrentSceneIndex + " / " + (SceneManager.sceneCountInBuildSettings - 1) + " - " + SceneManager.GetActiveScene().name;
 
         GameObject SceneDescriptor = GameObject.FindGameObjectWithTag("TestInstructions");
 
@@ -121,6 +121,4 @@ public class TestDriver : MonoBehaviour {
             m_FlagMoveToPreviousScene = Input.GetKeyDown(KeyCode.LeftArrow);
         }
     }
-
-    
 }

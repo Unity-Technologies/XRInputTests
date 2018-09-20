@@ -29,6 +29,9 @@ ExportedObj/
 *.pdb
 *.opendb
 
+# Unity3D formatting tool artifacts
+*.preformat.bak
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta

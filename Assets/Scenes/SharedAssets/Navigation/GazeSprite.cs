@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GazeSprite : MonoBehaviour {
-
+public class GazeSprite : MonoBehaviour
+{
     public Transform[] m_GazeableTransforms;
     public float m_Angle;
     private MeshRenderer m_MeshRenderer;
@@ -11,20 +11,21 @@ public class GazeSprite : MonoBehaviour {
     public Color m_Color;
 
     public float m_Distance = 2.0f;
-    
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start()
+    {
         MeshRenderer m_MeshRenderer = GetComponent<MeshRenderer>();
-        if(m_MeshRenderer != null)
+        if (m_MeshRenderer != null)
         {
             m_Material = m_MeshRenderer.material;
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
         if (m_Material != null)
         {
             float bestAngle = float.MaxValue;
@@ -39,14 +40,14 @@ public class GazeSprite : MonoBehaviour {
                     bestAngle = angle;
                 }
             }
-            
+
             float delta = m_Angle - bestAngle;
             float lerpFactor = 0.0f;
-            if(delta > 0f)
+            if (delta > 0f)
             {
                 lerpFactor = 1.0f - (bestAngle / m_Angle);
             }
-            
+
             m_Material.SetColor("_TintColor", Color.Lerp(Color.clear, m_Color, lerpFactor));
 
             if (m_MeshRenderer != null)
@@ -54,8 +55,6 @@ public class GazeSprite : MonoBehaviour {
                 m_MeshRenderer.enabled = lerpFactor > 0f;
             }
         }
-
-        
     }
 
     private void LateUpdate()

@@ -1,12 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.XR;
 using UnityEngine.UI;
 
-public class XRNodeCapabilities : MonoBehaviour {
-
+public class XRNodeCapabilities : MonoBehaviour
+{
     public XRNode node;
 
     public Text nodeCheck;
@@ -14,9 +14,10 @@ public class XRNodeCapabilities : MonoBehaviour {
     public Text supportsImpulse;
     public Text supportsBuffer;
     public Text bufferFreqHz;
-    
-    
-	void Update () {
+
+
+    void Update()
+    {
         HapticCapabilities caps = new HapticCapabilities();
         InputDevices.GetDeviceAtXRNode(node).TryGetHapticCapabilities(out caps);
 
@@ -25,5 +26,5 @@ public class XRNodeCapabilities : MonoBehaviour {
         supportsImpulse.text = caps.supportsImpulse.ToString();
         supportsBuffer.text = caps.supportsBuffer.ToString();
         bufferFreqHz.text = caps.bufferFrequencyHz.ToString();
-	}
+    }
 }

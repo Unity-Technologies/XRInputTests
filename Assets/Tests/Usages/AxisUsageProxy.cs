@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,7 @@ using UnityEngine.XR;
 public class AxisUsageProxy : MonoBehaviour
 {
     public XRNode node;
-    public string usageName;   
+    public string usageName;
 
     public Text textComponent;
     public Slider sliderComponent;

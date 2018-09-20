@@ -8,7 +8,6 @@ using UnityEngine.Rendering;
 [InitializeOnLoad]
 public class XRTestConfigurationWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetChanged
 {
-
     private static XRTestConfigurationWindow self;
 
     void OnEnable()
@@ -64,7 +63,7 @@ public class XRTestConfigurationWindow : EditorWindow, UnityEditor.Build.IActive
 
         EditorGUI.BeginChangeCheck();
         var guiContent = new GUIContent("Rendering Path",
-                "The rendering path to use the project. Applied to all graphics tiers.");
+            "The rendering path to use the project. Applied to all graphics tiers.");
         var newRenderingPathIndex = EditorGUILayout.Popup(guiContent, currentPathIndex, ValidRenderingPathsGuiContents());
         if (EditorGUI.EndChangeCheck())
         {
@@ -115,7 +114,7 @@ public class XRTestConfigurationWindow : EditorWindow, UnityEditor.Build.IActive
         EditorGUI.BeginChangeCheck();
         var currentSdkIndex = Array.IndexOf(XRSdkDescription.validSdks, XRSdkDescription.currentSdk);
         var index = EditorGUILayout.Popup(new GUIContent("SDK", "SDK used for testing"), currentSdkIndex,
-                XRSdkDescription.validSdkGuiContents);
+            XRSdkDescription.validSdkGuiContents);
 
         if (EditorGUI.EndChangeCheck())
         {
@@ -154,7 +153,7 @@ public class XRTestConfigurationWindow : EditorWindow, UnityEditor.Build.IActive
 
     public static void RepaintIfOpen()
     {
-        if(self != null)
+        if (self != null)
         {
             self.Repaint();
         }

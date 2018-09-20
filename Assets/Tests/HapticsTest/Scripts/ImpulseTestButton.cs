@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.XR;
 
 [RequireComponent(typeof(Button))]
-public class ImpulseTestButton : MonoBehaviour {
+public class ImpulseTestButton : MonoBehaviour
+{
     [Tooltip("If the amplitude slider is not connected then the amplitude will default to a controller's maximum value.")]
     public Slider amplitudeSlider;
     [Tooltip("If the duration slider is not connected then the duration will default to either 1 second or DurationMax - whichever is lower.")]
@@ -27,7 +28,7 @@ public class ImpulseTestButton : MonoBehaviour {
     private void SendImpulseToBothControllers()
     {
         HapticCapabilities caps = new HapticCapabilities();
-        
+
         if (InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).TryGetHapticCapabilities(out caps))
         {
             SendImpulseToNode(XRNode.LeftHand, caps);
@@ -46,9 +47,9 @@ public class ImpulseTestButton : MonoBehaviour {
         float frequency = (frequencySlider != null) ? (frequencySlider.value) : 1f;
 
         InputDevices.GetDeviceAtXRNode(node).SendHapticImpulse(0, amplitude, duration);
-        Debug.Log("Impulse sent to " + node 
+        Debug.Log("Impulse sent to " + node
             + "\n" + "Amplitude = " + amplitude
             + "\n" + "Duration = " + duration
-            );
+        );
     }
 }

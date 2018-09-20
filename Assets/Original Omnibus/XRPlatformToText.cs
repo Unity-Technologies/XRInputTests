@@ -1,12 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class XRPlatformToText : MonoBehaviour {
-
+public class XRPlatformToText : MonoBehaviour
+{
     public Text loadedDeviceText;
     public Text supportedDeviceText;
     public Text joystickNamesText;
@@ -23,12 +23,13 @@ public class XRPlatformToText : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         string displayTextAccumulator;
 
         // Loaded device
         loadedDeviceText.text = XRSettings.loadedDeviceName;
-        
+
         // Supported devices (this build)
         displayTextAccumulator = "";
         foreach (string device in XRSettings.supportedDevices)
@@ -57,22 +58,24 @@ public class XRPlatformToText : MonoBehaviour {
         InputTracking.trackingLost -= OnTrackingLost;
     }
 
-    
-    void OnNodeAdded (XRNodeState NodeState)
+    void OnNodeAdded(XRNodeState NodeState)
     {
         AddEventToQueue("NodeAdded: " + NodeState.nodeType);
         ShowJoystickNames();
     }
-    void OnNodeRemoved (XRNodeState NodeState)
+
+    void OnNodeRemoved(XRNodeState NodeState)
     {
         AddEventToQueue("NodeRemoved: " + NodeState.nodeType);
         ShowJoystickNames();
     }
-    void OnTrackingAcquired (XRNodeState NodeState)
+
+    void OnTrackingAcquired(XRNodeState NodeState)
     {
         AddEventToQueue("TrackingAquired: " + NodeState.nodeType);
     }
-    void OnTrackingLost (XRNodeState NodeState)
+
+    void OnTrackingLost(XRNodeState NodeState)
     {
         AddEventToQueue("TrackingLost: " + NodeState.nodeType);
     }
@@ -84,7 +87,7 @@ public class XRPlatformToText : MonoBehaviour {
         EventDescriptor = "<" + m_EventNumber + "> " + EventDescriptor;
         m_EventNumber++;
         m_Events.Enqueue(EventDescriptor);
-        
+
         while (m_Events.Count > m_QueueMaximumSize)
         {
             m_Events.Dequeue();

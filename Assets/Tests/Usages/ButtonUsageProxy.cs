@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,11 +21,11 @@ public class ButtonUsageProxy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         bool buttonState;
 
-        if(imageComponent != null && 
+        if (imageComponent != null &&
             InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<bool>(usageName), out buttonState))
         {
             if (buttonState)
@@ -36,6 +36,6 @@ public class ButtonUsageProxy : MonoBehaviour
             {
                 imageComponent.color = Color.red;
             }
-        }             
-	}
+        }
+    }
 }

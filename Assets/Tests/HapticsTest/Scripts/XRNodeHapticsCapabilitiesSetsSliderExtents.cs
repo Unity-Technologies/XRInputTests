@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +6,8 @@ using UnityEngine.XR;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class XRNodeHapticsCapabilitiesSetsSliderExtents : MonoBehaviour {
-
+public class XRNodeHapticsCapabilitiesSetsSliderExtents : MonoBehaviour
+{
     public enum DriveType
     {
         Amplitude,
@@ -19,14 +19,16 @@ public class XRNodeHapticsCapabilitiesSetsSliderExtents : MonoBehaviour {
     public DriveType driveType;
     private Slider m_Slider;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         m_Slider = GetComponent<Slider>();
         SetSliderExtents();
-	}
-	
-	public void SetSliderExtents() {
-		HapticCapabilities caps = new HapticCapabilities();
+    }
+
+    public void SetSliderExtents()
+    {
+        HapticCapabilities caps = new HapticCapabilities();
         InputDevices.GetDeviceAtXRNode(node).TryGetHapticCapabilities(out caps);
 
         if (!caps.supportsImpulse)
@@ -49,5 +51,5 @@ public class XRNodeHapticsCapabilitiesSetsSliderExtents : MonoBehaviour {
         }
 
         m_Slider.value = m_Slider.maxValue;
-	}
+    }
 }

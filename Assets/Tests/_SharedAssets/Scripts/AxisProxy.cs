@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AxisProxy : MonoBehaviour
 {
     public string axisId;
-    public string axisName;   
+    public string axisName;
 
     public Text textComponent;
     public Slider sliderComponent;
