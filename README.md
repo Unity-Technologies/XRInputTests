@@ -1,4 +1,4 @@
-# VR Input Test Suite
+# XR Input Test Suite
 
 ## Running the Complete Project in the Editor
 If you are in the complete project, start by opening the XR Tests Editor Window.  This can be found from the menu bar at Window->XR Tests.  From this menu you can use the provided buttons to set up a test to run, edit, or export.  It is suggested you use these buttons to setup unless you really know what you are doing!
