@@ -74,7 +74,14 @@ public class XRSdkDescription
         get
         {
             var buildTargetGroup = EditorUserBuildSettings.selectedBuildTargetGroup;
+            try
+            {
             return s_SupportedSdks[buildTargetGroup];
+            }
+            catch
+            {
+                return null; // If we are using XRSDK, we might not have a SDK through this method.
+            }
         }
     }
 
@@ -91,6 +98,11 @@ public class XRSdkDescription
     /// </summary>
     public static XRSdkDescription currentSdk
     {
-        get { return validSdks.FirstOrDefault(validSdk => validSdk.IsActiveSdk()); }
+        get {
+            if (validSdks != null)
+                return validSdks.FirstOrDefault(validSdk => validSdk.IsActiveSdk());
+            else
+                return null;
+        }
     }
 }

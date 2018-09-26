@@ -138,6 +138,7 @@ public class XRTestExportWindow : EditorWindow
 
         CreateEmptyProjectDirectory(outputProjectPath);
         CopyProjectSettings(outputProjectPath, rootPath);
+        CopyPackagesFolder(outputProjectPath, rootPath);
         CopyDependencies(rootPath, outputProjectPath, extraScriptsRequired);
     }
 
@@ -200,6 +201,27 @@ public class XRTestExportWindow : EditorWindow
         finally
         {
             XRBuildSettings.UpdateBuildSettings();
+        }
+    }
+
+    void CopyPackagesFolder(string outputProjectPath, string rootPath)
+    {
+        // This method changes build settings so our EditorBuildSettings asset just has the one scene,
+        // so we need to make sure that no matter what we update our build settings back to the way
+        // they should be for the suite.
+        try
+        {
+            var outputPackageSettings = Path.Combine(outputProjectPath, "Packages");
+            Directory.CreateDirectory(outputPackageSettings);
+            foreach (var file in Directory.GetFiles(Path.Combine(rootPath, "Packages")))
+            {
+                var destFile = Path.Combine(outputPackageSettings, Path.GetFileName(file));
+                File.Copy(file, destFile);
+            }
+        }
+        catch
+        {
+            Debug.LogError("Could not copy project Packages folder");
         }
     }
 
