@@ -3,10 +3,8 @@
 <name>GetJoystickNames</name><target>0</target>
 <name>GetNodeNames</name><target>0</target>
 <name>GetNodeStates</name><target>0</target>
-<name>HapticsTest</name><target>0</target>
 <name>Node Events</name><target>0</target>
 <name>SupportedAndLoadedDevices</name><target>0</target>
 <name>Template</name><target>0</target>
 <name>TrackingFeatures</name><target>0</target>
-<name>Usages</name><target>0</target>
 <name>XRNodePhysicalTryGets</name><target>0</target>
