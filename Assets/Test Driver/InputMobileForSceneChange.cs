@@ -17,7 +17,7 @@ public class InputMobileForSceneChange
         bool input_up = false;
 
         //Touch-based input if controller is not connected.
-        if (Input.touchSupported)
+        if (Input.touchSupported && Input.touchCount != 0)
         {
             input_down = Input.GetTouch(0).phase == TouchPhase.Began;
             input_up = Input.GetTouch(0).phase == TouchPhase.Ended;
