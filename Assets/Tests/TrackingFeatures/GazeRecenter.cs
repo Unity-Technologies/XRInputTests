@@ -2,24 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavigationArrow : MonoBehaviour {
+using UnityEngine.XR;
+using UnityEngine.UI;
 
-    private Material m_Material;
+public class GazeRecenter : MonoBehaviour {
+
+    public Image targetImage;
     private Collider m_Collider;
 
     private float m_Timer = 0.0f;
     public float minActiveValue = 0.4f;
     public float maxTimer = 1.5f;
 
-    public float m_SceneIncrement = 1.0f;
-
 	// Use this for initialization
 	void Start () {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-        if(meshRenderer != null)
-        {
-            m_Material = meshRenderer.material;
-        }
         m_Collider = GetComponent<Collider>();
 	}
 	
@@ -42,18 +38,13 @@ public class NavigationArrow : MonoBehaviour {
             
             float t = m_Timer / maxTimer;
 
-            m_Material.SetFloat("_LerpFactor", t);
+            if (targetImage != null)
+                targetImage.color = new Color(t, 0, 0);
 
             if(m_Timer >= maxTimer)
             {
-                if(Mathf.Sign(m_SceneIncrement) > 0.0f)
-                {
-                    Navigation.NextScene();
-                }
-                else
-                {
-                    Navigation.PreviousScene();
-                }
+                InputTracking.Recenter();
+                Debug.Log("Orientation Recentered.");
 
                 m_Timer = 0;
             }
