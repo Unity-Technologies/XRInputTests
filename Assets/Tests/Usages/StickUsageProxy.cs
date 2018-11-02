@@ -26,8 +26,11 @@ public class StickUsageProxy : MonoBehaviour
     void Update()
     {
         Vector2 value;
+        InputDevice device = new InputDevice();
 
-        if (!InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<Vector2>(usageName), out value))
+        if (!InputDevices.TryGetDeviceAtXRNode(node, out device)
+            || !device.TryGetFeatureValue(new InputFeatureUsage<Vector2>(usageName), out value)
+            )
             return;
 
         if (horizontalSliderComponent != null)

@@ -29,9 +29,12 @@ public class XRNodeHapticsCapabilitiesSetsSliderExtents : MonoBehaviour
     public void SetSliderExtents()
     {
         HapticCapabilities caps = new HapticCapabilities();
-        InputDevices.GetDeviceAtXRNode(node).TryGetHapticCapabilities(out caps);
+        InputDevice device = new InputDevice();
 
-        if (!caps.supportsImpulse)
+        if (!InputDevices.TryGetDeviceAtXRNode(node, out device) 
+            || !device.TryGetHapticCapabilities(out caps) 
+            || !caps.supportsImpulse
+            )
             return;
 
         switch (driveType)

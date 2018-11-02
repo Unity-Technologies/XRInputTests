@@ -25,8 +25,11 @@ public class AxisUsageProxy : MonoBehaviour
     void Update()
     {
         float value;
+        InputDevice device = new InputDevice();
 
-        if (!InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<float>(usageName), out value))
+        if (!InputDevices.TryGetDeviceAtXRNode(node, out device)
+            || !device.TryGetFeatureValue(new InputFeatureUsage<float>(usageName), out value)
+            )
             return;
 
         if (sliderComponent != null)

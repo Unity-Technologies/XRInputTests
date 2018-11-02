@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Tests/HapticsTest/HapticsTest.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Tests/InputDevices/InputDevices.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
     path: Assets/Tests/NodeEvents/Node Events.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
