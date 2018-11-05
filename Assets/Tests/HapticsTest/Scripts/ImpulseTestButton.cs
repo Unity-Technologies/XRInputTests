@@ -29,17 +29,17 @@ public class ImpulseTestButton : MonoBehaviour
     {
         HapticCapabilities caps = new HapticCapabilities();
 
-        InputDevice LeftDevice = new InputDevice();
-        InputDevice RightDevice = new InputDevice();
+        InputDevice LeftDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+        InputDevice RightDevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
-        if (InputDevices.TryGetDeviceAtXRNode(XRNode.LeftHand, out LeftDevice) 
+        if (LeftDevice != null
             && LeftDevice.TryGetHapticCapabilities(out caps)
             )
         {
             SendImpulseToNode(XRNode.LeftHand, caps);
         }
 
-        if (InputDevices.TryGetDeviceAtXRNode(XRNode.RightHand, out RightDevice) 
+        if (RightDevice != null
             && RightDevice.TryGetHapticCapabilities(out caps)
             )
         {
@@ -53,14 +53,15 @@ public class ImpulseTestButton : MonoBehaviour
         float duration  = (durationSlider != null) ? (durationSlider.value) : 1f;
         float frequency = (frequencySlider != null) ? (frequencySlider.value) : 1f;
 
-        InputDevice hapticDevice = new InputDevice();
+        InputDevice hapticDevice = InputDevices.GetDeviceAtXRNode(node);
 
-        if (InputDevices.TryGetDeviceAtXRNode(node, out hapticDevice)) {
-            hapticDevice.SendHapticImpulse(0, amplitude, duration);
-            Debug.Log("Impulse sent to " + node
-                + "\n" + "Amplitude = " + amplitude
-                + "\n" + "Duration = " + duration
-            );
-        }
+        if (hapticDevice == null)
+            return;
+        
+        hapticDevice.SendHapticImpulse(0, amplitude, duration);
+        Debug.Log("Impulse sent to " + node
+            + "\n" + "Amplitude = " + amplitude
+            + "\n" + "Duration = " + duration
+        );
     }
 }

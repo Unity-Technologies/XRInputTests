@@ -24,9 +24,13 @@ public class DeviceAtXRNode : MonoBehaviour
     void Update()
     {
         if (!device.isValid)
-            value.text = "-";
+            value.text = "No valid device";
 
-        if (InputDevices.TryGetDeviceAtXRNode(node, out device))
-            value.text = device.name;
+        device = InputDevices.GetDeviceAtXRNode(node);
+
+        if (device == null)
+            return;
+
+        value.text = device.name;
     }
 }

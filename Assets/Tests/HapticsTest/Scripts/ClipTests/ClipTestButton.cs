@@ -27,9 +27,9 @@ public class ClipTestButton : MonoBehaviour
     {
         HapticCapabilities caps = new HapticCapabilities();
 
-        InputDevice device;
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
 
-        if (!InputDevices.TryGetDeviceAtXRNode(node, out device) 
+        if (device == null
             || !device.TryGetHapticCapabilities(out caps)
             )
             return false;
@@ -48,16 +48,17 @@ public class ClipTestButton : MonoBehaviour
 
     void PlayClip()
     {
-        InputDevice device;
+        InputDevice LeftDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+        InputDevice RightDevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
         if (GenerateClip(XRNode.LeftHand, ref m_LeftClip) 
-            && InputDevices.TryGetDeviceAtXRNode(XRNode.LeftHand, out device)
+            && LeftDevice != null
             )
-            device.SendHapticBuffer(0, m_LeftClip);
+            LeftDevice.SendHapticBuffer(0, m_LeftClip);
 
         if (GenerateClip(XRNode.RightHand, ref m_RightClip) 
-            && InputDevices.TryGetDeviceAtXRNode(XRNode.RightHand, out device)
+            && RightDevice != null
             )
-            device.SendHapticBuffer(0, m_RightClip);
+            RightDevice.SendHapticBuffer(0, m_RightClip);
     }
 }

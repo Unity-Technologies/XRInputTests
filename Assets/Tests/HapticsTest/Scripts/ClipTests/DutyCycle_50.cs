@@ -10,9 +10,9 @@ public class DutyCycle_50 : ClipTestButton
     {
         HapticCapabilities caps = new HapticCapabilities();
 
-        InputDevice device;
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
 
-        if (!InputDevices.TryGetDeviceAtXRNode(node, out device) 
+        if (device == null
             || !device.TryGetHapticCapabilities(out caps)
             )
             return false;

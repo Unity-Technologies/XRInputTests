@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class ListDevicesWithRole : MonoBehaviour
+public class ListDevicesAtNode : MonoBehaviour
 {
     public Text listText;
-    public InputDeviceRole role;
+    public XRNode node;
 
     void Start()
     {
@@ -26,10 +26,10 @@ public class ListDevicesWithRole : MonoBehaviour
 
     void ShowDeviceNames()
     {
-        string displayTextAccumulator = role + ": ";
+        string displayTextAccumulator = node + ": ";
 
         List<InputDevice> inputDevices = new List<InputDevice>();
-        InputDevices.TryGetDevicesWithRole(role, inputDevices);
+        InputDevices.TryGetDevicesAtXRNode(node, inputDevices);
 
         foreach (InputDevice device in inputDevices)
         {

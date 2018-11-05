@@ -29,18 +29,23 @@ public class ListFeatureUsages : MonoBehaviour
         string displayTextAccumulator = "";
         int nodeNumber = 0;
 
-        InputDevice device = new InputDevice();
-        InputDevices.TryGetDeviceAtXRNode(node, out device);
-        List<InputFeatureUsage> features = new List<InputFeatureUsage>();
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
 
-        if (device.TryGetFeatureUsages(features))
-            foreach (InputFeatureUsage feature in features)
-            {
-                displayTextAccumulator += ("<" + nodeNumber + "> " + feature.name + " - \"" + feature.type.ToString() + "\"\n");
-                nodeNumber++;
-            }
+        if (device == null)
+            displayTextAccumulator = "Device not found at node " + node.ToString();
         else
-            displayTextAccumulator = "No Features were found!";
+        {
+            List<InputFeatureUsage> features = new List<InputFeatureUsage>();
+
+            if (device.TryGetFeatureUsages(features))
+                foreach (InputFeatureUsage feature in features)
+                {
+                    displayTextAccumulator += ("<" + nodeNumber + "> " + feature.name + " - \"" + feature.type.ToString() + "\"\n");
+                    nodeNumber++;
+                }
+            else
+                displayTextAccumulator = "No Features were found!";
+        }
 
         listText.text = displayTextAccumulator;
     }

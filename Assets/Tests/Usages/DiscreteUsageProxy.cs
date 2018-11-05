@@ -25,13 +25,13 @@ public class DiscreteUsageProxy : MonoBehaviour
     void Update()
     {
         uint DiscreteState;
-        InputDevice device = new InputDevice();
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
 
-        if (InputDevices.TryGetDeviceAtXRNode(node, out device)
-            && device.TryGetFeatureValue(new InputFeatureUsage<uint>(usageName), out DiscreteState)
+        if (device == null
+            || !device.TryGetFeatureValue(new InputFeatureUsage<uint>(usageName), out DiscreteState)
             )
-        {
-            valueText.text = "0x" + DiscreteState.ToString("X8");
-        }
+            return;
+
+        valueText.text = "0x" + DiscreteState.ToString("X8");
     }
 }
