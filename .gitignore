@@ -5,6 +5,7 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+.gradle/
 
 # Don't include osig files in what will become a public repository
 Assets/Plugins.meta
