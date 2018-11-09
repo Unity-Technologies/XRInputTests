@@ -29,7 +29,7 @@ public class ListDevicesAtNode : MonoBehaviour
         string displayTextAccumulator = node + ": ";
 
         List<InputDevice> inputDevices = new List<InputDevice>();
-        InputDevices.TryGetDevicesAtXRNode(node, inputDevices);
+        InputDevices.GetDevicesAtXRNode(node, inputDevices);
 
         foreach (InputDevice device in inputDevices)
         {

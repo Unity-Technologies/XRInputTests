@@ -29,7 +29,7 @@ public class ListDevicesWithRole : MonoBehaviour
         string displayTextAccumulator = role + ": ";
 
         List<InputDevice> inputDevices = new List<InputDevice>();
-        InputDevices.TryGetDevicesWithRole(role, inputDevices);
+        InputDevices.GetDevicesWithRole(role, inputDevices);
 
         foreach (InputDevice device in inputDevices)
         {

@@ -29,7 +29,7 @@ public class ListInputDevices : MonoBehaviour
         int nodeNumber = 0;
 
         List<InputDevice> inputDevices = new List<InputDevice>();
-        InputDevices.TryGetDevices(inputDevices);
+        InputDevices.GetDevices(inputDevices);
 
         foreach (InputDevice device in inputDevices)
         {
