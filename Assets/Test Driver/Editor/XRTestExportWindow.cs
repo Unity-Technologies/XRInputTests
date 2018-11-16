@@ -164,17 +164,18 @@ public class XRTestExportWindow : EditorWindow
             CopyFile(rootPath, outputProjectPath, file);
 
         CopyFile(rootPath, outputProjectPath, "Assets/Test Driver/InputMobileForSceneChange.cs");
-        CopyFile(rootPath, outputProjectPath, "Assets/README.txt");
+        CopyFile(rootPath, outputProjectPath, "README.md", false);
     }
 
-    static void CopyFile(string rootPath, string outputProjectPath, string file)
+    static void CopyFile(string rootPath, string outputProjectPath, string file, bool hasMeta = true)
     {
         var outputFile = Path.Combine(outputProjectPath, file);
         var sourceFile = Path.Combine(rootPath, file);
         Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
 
         File.Copy(sourceFile, outputFile);
-        File.Copy(sourceFile + ".meta", outputFile + ".meta");
+        if (hasMeta)
+            File.Copy(sourceFile + ".meta", outputFile + ".meta");
     }
 
     void CopyProjectSettings(string outputProjectPath, string rootPath)
