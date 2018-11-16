@@ -14,6 +14,9 @@ public class StickUsageProxy : MonoBehaviour
     public Slider verticalSliderComponent;
     public Text valueTextComponent;
 
+    public float currentXValue { get; private set; }
+    public float currentYValue { get; private set; }
+
     private void Start()
     {
         if (textComponent != null)
@@ -29,6 +32,9 @@ public class StickUsageProxy : MonoBehaviour
 
         if (!InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<Vector2>(usageName), out value))
             return;
+
+        currentXValue = value.x;
+        currentYValue = value.y;
 
         if (horizontalSliderComponent != null)
             horizontalSliderComponent.value = value.x;

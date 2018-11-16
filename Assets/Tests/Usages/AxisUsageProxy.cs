@@ -12,6 +12,8 @@ public class AxisUsageProxy : MonoBehaviour
     public Text textComponent;
     public Slider sliderComponent;
     public Text valueTextComponent;
+    
+    public float currentValue { get; private set; }
 
     private void Start()
     {
@@ -28,6 +30,8 @@ public class AxisUsageProxy : MonoBehaviour
 
         if (!InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<float>(usageName), out value))
             return;
+
+        currentValue = value;
 
         if (sliderComponent != null)
         {

@@ -33,32 +33,35 @@ public class AxisRangeCheck : MonoBehaviour
 
         foreach (AxisUsageProxy axis in m_Axes)
         {
-            if (axis.sliderComponent.value < axis.sliderComponent.minValue
-                || axis.sliderComponent.value > axis.sliderComponent.maxValue)
+            if (axis.currentValue < axis.sliderComponent.minValue
+                || axis.currentValue > axis.sliderComponent.maxValue)
             {
                 rangeErrorFound = true;
-                Debug.LogError("Usage " + axis.usageName + " has value " + axis.sliderComponent.value + ", which is out of the expected range of [" + axis.sliderComponent.minValue + ", " + axis.sliderComponent.maxValue + "].");
+                Debug.LogError("Usage " + axis.usageName + " has value " 
+                    + axis.currentValue + ", which is out of the expected range of [" 
+                    + axis.sliderComponent.minValue + ", " 
+                    + axis.sliderComponent.maxValue + "].");
             }
         }
 
         foreach (StickUsageProxy axis2D in m_2DAxes)
         {
-            if (axis2D.horizontalSliderComponent.value < axis2D.horizontalSliderComponent.minValue
-                || axis2D.horizontalSliderComponent.value > axis2D.horizontalSliderComponent.maxValue)
+            if (axis2D.currentXValue < axis2D.horizontalSliderComponent.minValue
+                || axis2D.currentXValue > axis2D.horizontalSliderComponent.maxValue)
             {
                 rangeErrorFound = true;
                 Debug.LogError("Usage " + axis2D.usageName + " horizontal value has value " 
-                    + axis2D.horizontalSliderComponent.value + ", which is out of the expected range of [" 
+                    + axis2D.currentXValue + ", which is out of the expected range of [" 
                     + axis2D.horizontalSliderComponent.minValue + ", " 
                     + axis2D.horizontalSliderComponent.maxValue + "].");
             }
 
-            if (axis2D.verticalSliderComponent.value < axis2D.verticalSliderComponent.minValue
-                || axis2D.verticalSliderComponent.value > axis2D.verticalSliderComponent.maxValue)
+            if (axis2D.currentYValue < axis2D.verticalSliderComponent.minValue
+                || axis2D.currentYValue > axis2D.verticalSliderComponent.maxValue)
             {
                 rangeErrorFound = true;
                 Debug.LogError("Usage " + axis2D.usageName + " vertical value has value " 
-                    + axis2D.verticalSliderComponent.value + ", which is out of the expected range of [" 
+                    + axis2D.currentYValue + ", which is out of the expected range of [" 
                     + axis2D.verticalSliderComponent.minValue + ", " 
                     + axis2D.verticalSliderComponent.maxValue + "].");
             }
