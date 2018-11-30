@@ -7,38 +7,38 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Test Driver/Start.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: ba63fc136673f4944902fb6c9375f388
+  - enabled: 0
     path: Assets/Tests/Camera and TrackedPoseDriver/CameraAndTrackedPoseDriver.unity
-    guid: 00000000000000000000000000000000
+    guid: a67d7d8f60284cc45910fd2181852fae
   - enabled: 1
     path: Assets/Tests/Generic Buttons and Axes/Generic Buttons and Axes.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: 8cd2588c7d7c1c4459ef8df9c388e710
+  - enabled: 0
     path: Assets/Tests/GetJoystickNames/GetJoystickNames.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: 77f8ffdeb028d6444adf511dcaecf2a5
+  - enabled: 0
     path: Assets/Tests/GetNodeNames/GetNodeNames.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: e149b8637eb0ea24ab44fcdcc9df4de7
+  - enabled: 0
     path: Assets/Tests/GetNodeStates/GetNodeStates.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: 416f832233ac2924692218249238946d
+  - enabled: 0
     path: Assets/Tests/HapticsTest/HapticsTest.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: fbb4335795648de4fbd726552402e720
+  - enabled: 0
     path: Assets/Tests/NodeEvents/Node Events.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: d56585fdddb2860468dd44cb93bae0ca
+  - enabled: 0
     path: Assets/Tests/SupportedAndLoadedDevices/SupportedAndLoadedDevices.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: 04ea673488f96e3409177a3b0f9a2c7a
+  - enabled: 0
     path: Assets/Tests/TrackingFeatures/TrackingFeatures.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: c617cff5f3559894e9df2e242fe8aa55
+  - enabled: 0
     path: Assets/Tests/Usages/Usages.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: ae511fb492aa4b04c8bf87c4d2327782
+  - enabled: 0
     path: Assets/Tests/XRNodePhysicalTryGets/XRNodePhysicalTryGets.unity
-    guid: 00000000000000000000000000000000
+    guid: 779b8af5c4da96c4494250f188f61ce4
   m_configObjects: {}

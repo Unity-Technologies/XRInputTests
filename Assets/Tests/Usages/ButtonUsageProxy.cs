@@ -26,7 +26,7 @@ public class ButtonUsageProxy : MonoBehaviour
         bool buttonState;
 
         if (imageComponent != null &&
-            InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<bool>(usageName), out buttonState))
+            InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputFeatureUsage<bool>(usageName), out buttonState))
         {
             if (buttonState)
             {

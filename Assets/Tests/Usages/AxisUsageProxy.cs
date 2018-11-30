@@ -28,7 +28,7 @@ public class AxisUsageProxy : MonoBehaviour
     {
         float value;
 
-        if (!InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputUsage<float>(usageName), out value))
+        if (!InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputFeatureUsage<float>(usageName), out value))
             return;
 
         currentValue = value;
