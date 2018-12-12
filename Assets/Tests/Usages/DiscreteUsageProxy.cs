@@ -25,6 +25,7 @@ public class DiscreteUsageProxy : MonoBehaviour
     void Update()
     {
         uint DiscreteState;
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
 
         if (InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(new InputFeatureUsage<uint>(usageName), out DiscreteState))
         {

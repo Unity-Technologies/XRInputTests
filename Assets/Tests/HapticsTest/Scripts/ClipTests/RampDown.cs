@@ -9,8 +9,11 @@ public class RampDown : ClipTestButton
     protected override bool GenerateClip(XRNode node, ref byte[] clip)
     {
         HapticCapabilities caps = new HapticCapabilities();
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
 
-        if (!InputDevices.GetDeviceAtXRNode(node).TryGetHapticCapabilities(out caps))
+        if (device == null
+            || !device.TryGetHapticCapabilities(out caps)
+            )
             return false;
 
         // Generate actual clip
