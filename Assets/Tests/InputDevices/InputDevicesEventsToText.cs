@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class NodeEventsToText : MonoBehaviour
+public class InputDevicesEventsToText : MonoBehaviour
 {
     public Text eventsText;
     public int m_QueueMaximumSize = 20;
@@ -23,38 +23,24 @@ public class NodeEventsToText : MonoBehaviour
 
     private void OnEnable()
     {
-        InputTracking.nodeAdded += OnNodeAdded;
-        InputTracking.nodeRemoved += OnNodeRemoved;
-        InputTracking.trackingAcquired += OnTrackingAcquired;
-        InputTracking.trackingLost += OnTrackingLost;
+        InputDevices.onDeviceConnected += OnDeviceConnected;
+        InputDevices.onDeviceDisconnected += OnDeviceDisconnected;
     }
 
     private void OnDisable()
     {
-        InputTracking.nodeAdded -= OnNodeAdded;
-        InputTracking.nodeRemoved -= OnNodeRemoved;
-        InputTracking.trackingAcquired -= OnTrackingAcquired;
-        InputTracking.trackingLost -= OnTrackingLost;
+        InputDevices.onDeviceConnected -= OnDeviceConnected;
+        InputDevices.onDeviceDisconnected -= OnDeviceDisconnected;
     }
 
-    void OnNodeAdded(XRNodeState NodeState)
+    void OnDeviceConnected(InputDevice device)
     {
-        AddEventToQueue("NodeAdded: " + NodeState.nodeType);
+        AddEventToQueue("OnDeviceConnected: " + device.name);
     }
 
-    void OnNodeRemoved(XRNodeState NodeState)
+    void OnDeviceDisconnected(InputDevice device)
     {
-        AddEventToQueue("NodeRemoved: " + NodeState.nodeType);
-    }
-
-    void OnTrackingAcquired(XRNodeState NodeState)
-    {
-        AddEventToQueue("TrackingAquired: " + NodeState.nodeType);
-    }
-
-    void OnTrackingLost(XRNodeState NodeState)
-    {
-        AddEventToQueue("TrackingLost: " + NodeState.nodeType);
+        AddEventToQueue("OnDeviceDisconnected: " + device.name);
     }
 
     void AddEventToQueue(string EventDescriptor)
