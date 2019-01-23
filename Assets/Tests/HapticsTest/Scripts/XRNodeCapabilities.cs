@@ -14,6 +14,8 @@ public class XRNodeCapabilities : MonoBehaviour
     public Text supportsImpulse;
     public Text supportsBuffer;
     public Text bufferFreqHz;
+    public Text bufferMaxSize;
+    public Text bufferOptimalSize;
 
 
     void Update()
@@ -23,13 +25,16 @@ public class XRNodeCapabilities : MonoBehaviour
 
         if (device == null
             || !device.TryGetHapticCapabilities(out caps)
-            )
+            ) {
             return;
+        }
 
         nodeCheck.text = node.ToString();
         numChannels.text = caps.numChannels.ToString();
         supportsImpulse.text = caps.supportsImpulse.ToString();
         supportsBuffer.text = caps.supportsBuffer.ToString();
         bufferFreqHz.text = caps.bufferFrequencyHz.ToString();
+        bufferMaxSize.text = caps.bufferMaxSize.ToString();
+        bufferOptimalSize.text = caps.bufferOptimalSize.ToString();
     }
 }
