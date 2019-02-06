@@ -23,14 +23,14 @@ public class InputDevicesEventsToText : MonoBehaviour
 
     private void OnEnable()
     {
-        InputDevices.onDeviceConnected += OnDeviceConnected;
-        InputDevices.onDeviceDisconnected += OnDeviceDisconnected;
+        InputDevices.deviceConnected += OnDeviceConnected;
+        InputDevices.deviceDisconnected += OnDeviceDisconnected;
     }
 
     private void OnDisable()
     {
-        InputDevices.onDeviceConnected -= OnDeviceConnected;
-        InputDevices.onDeviceDisconnected -= OnDeviceDisconnected;
+        InputDevices.deviceConnected -= OnDeviceConnected;
+        InputDevices.deviceDisconnected -= OnDeviceDisconnected;
     }
 
     void OnDeviceConnected(InputDevice device)
