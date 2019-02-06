@@ -1970,7 +1970,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SupportsBuffer
+  m_Text: SupportsBuffer Value
 --- !u!222 &312202833
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2037,9 +2037,9 @@ MonoBehaviour:
   node: 5
   nodeCheck: {fileID: 1304052615}
   numChannels: {fileID: 2047256308}
-  supportsImpulse: {fileID: 1334462243}
-  supportsBuffer: {fileID: 1997956647}
-  bufferFreqHz: {fileID: 1209652485}
+  supportsImpulse: {fileID: 1323247639}
+  supportsBuffer: {fileID: 312202832}
+  bufferFreqHz: {fileID: 1237221114}
   bufferMaxSize: {fileID: 1395966308}
   bufferOptimalSize: {fileID: 616662482}
 --- !u!114 &323487134
@@ -3085,7 +3085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buffer Optimal Size
+  m_Text: Buffer Optimal Size Value
 --- !u!222 &616662483
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3608,7 +3608,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SupportsBuffer
+  m_Text: SupportsBuffer Value
 --- !u!222 &685623844
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3846,7 +3846,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Supports Impulse
+  m_Text: Supports Impulse Value
 --- !u!222 &714612402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5573,7 +5573,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Num Channels
+  m_Text: Num Channels Value
 --- !u!222 &1100912946
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6052,7 +6052,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buffer Frequency Hz
+  m_Text: Buffer Frequency Hz Value
 --- !u!222 &1204078503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6253,7 +6253,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buffer Frequency Hz
+  m_Text: Buffer Frequency Hz Value
 --- !u!222 &1237221115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6770,7 +6770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Supports Impulse
+  m_Text: Supports Impulse Value
 --- !u!222 &1323247640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7062,7 +7062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buffer Max Size
+  m_Text: Buffer Max Size Value
 --- !u!222 &1395966309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7396,7 +7396,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buffer Max Size
+  m_Text: Buffer Max Size Value
 --- !u!222 &1505866157
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10299,7 +10299,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Num Channels
+  m_Text: Num Channels Value
 --- !u!222 &2047256309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10379,7 +10379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buffer Optimal Size
+  m_Text: Buffer Optimal Size Value
 --- !u!222 &2068136998
 CanvasRenderer:
   m_ObjectHideFlags: 0
