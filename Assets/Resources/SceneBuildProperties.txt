@@ -1,4 +1,5 @@
 <name>CameraAndTrackedPoseDriver</name><target>0</target>
+<name>Characteristics</name><target>0</target>
 <name>Generic Buttons and Axes</name><target>0</target>
 <name>GetJoystickNames</name><target>0</target>
 <name>GetNodeNames</name><target>0</target>

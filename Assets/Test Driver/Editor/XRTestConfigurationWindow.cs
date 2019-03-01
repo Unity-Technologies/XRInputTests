@@ -25,7 +25,7 @@ public class XRTestConfigurationWindow : EditorWindow, UnityEditor.Build.IActive
     void OnGUI()
     {
         PlatformSelector();
-        SdkSelector();
+        //SdkSelector();
         RenderingPathSelector();
         StereoRenderingPathSelector();
         GraphicsJobsToggle();
