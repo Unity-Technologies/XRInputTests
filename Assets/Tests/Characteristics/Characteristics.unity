@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Continuous Node Events
+  m_Text: Continuous ConfigChange Events
 --- !u!222 &21657581
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2959,7 +2959,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: First 20 Node Events
+  m_Text: First 20 ConfigChange Events
 --- !u!222 &1449812286
 CanvasRenderer:
   m_ObjectHideFlags: 0
