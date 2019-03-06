@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8404833544172036212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58264a156053f4468eb21018f155dac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DepthBufferFormat: 1
+  UseSharedDepthBuffer: 0
+--- !u!114 &-6211377991762958023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6c5bd16b42a1542ad52d1d47746bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UsePrimaryWindowForDisplay: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9,9 +36,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e679265d16d650945812b915bb9d5cc3, type: 3}
   m_Name: Windows MR Package Settings
   m_EditorClassIdentifier: 
-  Keys: 
-  Values: []
+  Keys: 0e00000001000000
+  Values:
+  - {fileID: 328944953333459722}
+  - {fileID: 6255459330700082064}
+  BuildValues:
+  - {fileID: -6211377991762958023}
+--- !u!114 &328944953333459722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58264a156053f4468eb21018f155dac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DepthBufferFormat: 0
+  UseSharedDepthBuffer: 0
+--- !u!114 &6255459330700082064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8c90079f895eb4380034f125c63d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DepthBufferFormat: 0
+  UseSharedDepthBuffer: 0
