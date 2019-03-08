@@ -7,7 +7,7 @@ using UnityEngine.XR;
 
 public class ControllerHistory : BasePoseProvider
 {
-    public int TimeBackwards = 50;
+    public double TimeBackwards = 50;
     public XRNode DeviceToTrack;
 
     public override bool TryGetPoseFromProvider(out Pose output)
@@ -17,10 +17,12 @@ public class ControllerHistory : BasePoseProvider
         Quaternion rotation = Quaternion.identity;
         DateTime time = new DateTime();
         time = DateTime.Now;
-        time.AddMilliseconds(-TimeBackwards);
+        time = time.AddMilliseconds(-TimeBackwards);
 
         if(device.TryGetFeatureValue(CommonUsages.deviceRotation, time, out rotation))
         {
+            Debug.Log("Frame " + Time.frameCount + " " + DeviceToTrack + " rotation at time " + DateTime.Now.Millisecond + " - " + TimeBackwards + "= (" + time.Millisecond + ") is " + rotation.w + ", " + rotation.x + ", " + rotation.y + ", " + rotation.z);
+
             device.TryGetFeatureValue(CommonUsages.devicePosition, time, out position);          
             output.position = position;
             output.rotation = rotation;
