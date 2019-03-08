@@ -290,7 +290,6 @@ GameObject:
   m_Component:
   - component: {fileID: 636962812}
   - component: {fileID: 636962813}
-  - component: {fileID: 636962814}
   m_Layer: 0
   m_Name: TestDriver
   m_TagString: Untagged
@@ -329,22 +328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneNameText: {fileID: 1200549670}
   SceneDescriptionText: {fileID: 260621855}
---- !u!114 &636962814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636962811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c3631f5e58749a59194e0cf6baf6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AutomaticLoading: 1
-  m_AutomaticRunning: 1
-  m_Loaders:
-  - {fileID: 11400000, guid: 1ba7438b9cfc08a488e6b54896868a82, type: 2}
 --- !u!1 &1196766773
 GameObject:
   m_ObjectHideFlags: 0
