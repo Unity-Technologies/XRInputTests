@@ -53,6 +53,7 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
         titleContent = new GUIContent("XR Tests");
         m_Self = this;
         PopulateTestEntries();
+        BuildOverride.SetOverride(false);
     }
 
     void OnGUI()
@@ -71,10 +72,11 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
 
             GUILayout.FlexibleSpace();
 
-            bool override_toggle = ToolbarToggle(BuildOverride.override_build, "Override Scene List", "True to override the scenes in the Build Setting's scene list with the settings below.");
+            bool override_toggle = ToolbarToggle(BuildOverride.override_build, "Update Scene List", "True to override the scenes in the Build Setting's scene list with the settings below.");
             if (override_toggle != BuildOverride.override_build)
             {
-                BuildOverride.SetOverride(override_toggle);
+                XRBuildSettings.UpdateBuildSettings();
+                //BuildOverride.SetOverride(override_toggle);
             }
         }
 
