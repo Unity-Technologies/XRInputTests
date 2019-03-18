@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tests/Camera and TrackedPoseDriver/CameraAndTrackedPoseDriver.unity
     guid: 00000000000000000000000000000000
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/Tests/Characteristics/Characteristics.unity
     guid: 00000000000000000000000000000000
+=======
+>>>>>>> 8cb7fad... Change Override Build Settings button to update the scene list instead, also remove some start scene references.
   - enabled: 1
     path: Assets/Tests/Generic Buttons and Axes/Generic Buttons and Axes.unity
     guid: 00000000000000000000000000000000

@@ -23,7 +23,7 @@ public static class XRBuildSettings
             xrSdk = XRSdkDescription.currentSdk
         };
 
-        var scenes = new List<string> { SceneHelper.StartScene };
+        var scenes = new List<string>();
         scenes.AddRange(SceneHelper.GetTestScenePaths().Where(xrTestSuiteConfiguration.ShouldBuildTestScene));
         EditorBuildSettings.scenes = scenes.Select(s => new EditorBuildSettingsScene {enabled = true, path = s}).ToArray();
         AssetDatabase.SaveAssets();

@@ -6,12 +6,9 @@ using UnityEngine;
 
 public class SceneHelper : AssetPostprocessor
 {
-    public const string StartScene = "Assets/Test Driver/Start.unity";
-
     public static void OpenTestScene(string scenePath)
     {
         EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
-        OpenStartAdditive();
     }
 
     public static string[] GetTestScenePaths()
@@ -30,11 +27,5 @@ public class SceneHelper : AssetPostprocessor
 
         var instructions = new GameObject("Instructions");
         instructions.AddComponent<TestInstructions>();
-        OpenStartAdditive();
-    }
-
-    static void OpenStartAdditive()
-    {
-        EditorSceneManager.OpenScene(StartScene, OpenSceneMode.Additive);
     }
 }

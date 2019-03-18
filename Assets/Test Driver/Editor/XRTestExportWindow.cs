@@ -81,8 +81,6 @@ public class XRTestExportWindow : EditorWindow
     Scene MergeTestAndStartScenes()
     {
         var testScene = EditorSceneManager.OpenScene(m_TestScenePath, OpenSceneMode.Single);
-        var startScene = EditorSceneManager.OpenScene(SceneHelper.StartScene, OpenSceneMode.Additive);
-        SceneManager.MergeScenes(startScene, testScene);
         EditorSceneManager.SaveScene(testScene, m_ExportTestScenePath, false);
         return testScene;
     }

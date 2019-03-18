@@ -35,34 +35,13 @@ public class BuildOverride : MonoBehaviour
         if (!BuildPipeline.isBuildingPlayer)
         {
             BuildTarget target = options.target;// EditorUserBuildSettings.activeBuildTarget;
-            bool is_mobile = !target.ToString().Contains("Standalone");
 
             if (options.locationPathName != "")
             {
                 List<string> scenes = new List<string>();
                 foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
                 {
-                    string scene_name = Path.GetFileNameWithoutExtension(scene.path);
-                    XRTestsWindow.TestEntryUI entry = XRTestsWindow.GetEntryByName(scene_name);
-                    if (entry != null)      //Scene in build settings was also in the scene property database
-                    {
-                        //Check the entry for build target exclusion, skip if excluded.
-                        if (is_mobile && entry.build_target == XRTestsWindow.TestEntryUI.BuildTarget.Standalone)
-                        {
-                            Debug.Log("Skipping " + scene_name + " for mobile.");
-                            continue;
-                        }
-                        else if (!is_mobile && entry.build_target == XRTestsWindow.TestEntryUI.BuildTarget.Mobile)
-                        {
-                            Debug.Log("Skipping " + scene_name + " for standalone.");
-                            continue;
-                        }
-                        scenes.Add(scene.path);
-                    }
-                    else
-                    {
-                        scenes.Add(scene.path);
-                    }
+                    scenes.Add(scene.path);
                 }
 
                 //Output final build list
