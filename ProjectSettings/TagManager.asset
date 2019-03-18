@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CameraAnchor
   - TestInstructions
+  - TestDriver
   layers:
   - Default
   - TransparentFX

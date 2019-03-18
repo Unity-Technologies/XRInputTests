@@ -28,7 +28,7 @@ public class TestDriver : MonoBehaviour
 
     private void OnEnable()
     {
-        if (m_CurrentSceneIndex == 0 && SceneManager.sceneCountInBuildSettings > 1) { LoadNextScene(); }
+        //if (m_CurrentSceneIndex == 0 && SceneManager.sceneCountInBuildSettings > 1) { LoadNextScene(); }
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 

@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Test Driver/Start.unity
-    guid: ba63fc136673f4944902fb6c9375f388
-  - enabled: 1
     path: Assets/Tests/Camera and TrackedPoseDriver/CameraAndTrackedPoseDriver.unity
     guid: a67d7d8f60284cc45910fd2181852fae
   - enabled: 1
