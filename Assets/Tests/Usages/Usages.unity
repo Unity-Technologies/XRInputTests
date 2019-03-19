@@ -20990,6 +20990,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TestDriver: {fileID: 8491203116980037422, guid: 7aa6e3212c698104283048f85dd071d7,
     type: 3}
+  TestDriver_AR: {fileID: 8491203116980037422, guid: bc9d42f15db33554eaa21d652a142f92,
+    type: 3}
+  AR: 0
 --- !u!4 &1828169137
 Transform:
   m_ObjectHideFlags: 0
