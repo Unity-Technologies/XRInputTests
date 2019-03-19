@@ -30,7 +30,7 @@ public class XRTestExportWindow : EditorWindow
             var extraScriptsRequired = new HashSet<string>();
 
             //RemoveTestComponentsWeDontNeed(testScene);
-            RemoveCameraAnchor(testScene);
+            //RemoveCameraAnchor(testScene);
             //HandleTestUi(testScene, extraScriptsRequired);
             EditorSceneManager.SaveScene(testScene);
             ExportTestSceneToNewProject(extraScriptsRequired);
