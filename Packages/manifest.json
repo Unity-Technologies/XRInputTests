@@ -1,4 +1,14 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Staging",
+      "url": "https://api.bintray.com/npm/unity/unity-staging/",
+      "scopes": [
+        "com.unity.xr",
+        "com.unity.subsystemregistration"
+      ]
+    }
+  ],
   "dependencies": {
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.3.2",
@@ -6,7 +16,9 @@
     "com.unity.package-manager-ui": "2.1.1",
     "com.unity.purchasing": "2.0.3",
     "com.unity.textmeshpro": "1.3.0",
-    "com.unity.xr.googlevr.android": "1.18.3",
+    "com.unity.xr.arcore": "1.0.0-preview.24",
+    "com.unity.xr.arfoundation": "1.1.0-preview.6",
+    "com.unity.xr.arkit": "1.0.0-preview.23",
     "com.unity.xr.legacyinputhelpers": "1.0.3",
     "com.unity.xr.oculus.standalone": "1.29.1",
     "com.unity.xr.openvr.standalone": "1.0.3",
