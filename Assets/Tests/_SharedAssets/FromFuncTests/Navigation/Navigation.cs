@@ -15,7 +15,7 @@ public class Navigation : MonoBehaviour
         int nextSceneIndex = activeScene.buildIndex + 1;
         if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
         {
-            nextSceneIndex = 1; // Because Start scene is index 0
+            nextSceneIndex = 0;
         }
         if (m_Instance != null)
         {
@@ -28,7 +28,7 @@ public class Navigation : MonoBehaviour
     {
         Scene activeScene = SceneManager.GetActiveScene();
         int nextSceneIndex = activeScene.buildIndex - 1;
-        if (nextSceneIndex < 1)
+        if (nextSceneIndex < 0)
         {
             nextSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
         }

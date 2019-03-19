@@ -53,7 +53,6 @@ public class TestDriver : MonoBehaviour
     private void LoadNextScene()
     {
         int nextLevel = (m_CurrentSceneIndex + 1) % (SceneManager.sceneCountInBuildSettings);
-        if (nextLevel == 0) { nextLevel = 1; }
 
         RunTest(nextLevel);
     }
@@ -61,7 +60,7 @@ public class TestDriver : MonoBehaviour
     private void LoadPreviousScene()
     {
         int previousLevel = m_CurrentSceneIndex - 1;
-        if (previousLevel < 1) { previousLevel = SceneManager.sceneCountInBuildSettings - 1; }
+        if (previousLevel < 0) { previousLevel = SceneManager.sceneCountInBuildSettings - 1; }
 
         RunTest(previousLevel);
     }
