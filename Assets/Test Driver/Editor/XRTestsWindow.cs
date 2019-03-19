@@ -255,7 +255,7 @@ public class XRTestsWindow : EditorWindow, UnityEditor.Build.IActiveBuildTargetC
             using (new GUILayout.HorizontalScope("box"))
             {
                 DrawLabel();
-                DrawBuildSettings();
+                //DrawBuildSettings();
                 DrawButtons();
             }
         }
