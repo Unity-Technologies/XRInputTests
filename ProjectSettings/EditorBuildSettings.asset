@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Tests/Camera and TrackedPoseDriver/CameraAndTrackedPoseDriver.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Tests/Characteristics/Characteristics.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
     path: Assets/Tests/Generic Buttons and Axes/Generic Buttons and Axes.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
