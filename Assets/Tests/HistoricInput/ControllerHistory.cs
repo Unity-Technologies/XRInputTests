@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.XR.Interaction;
+using UnityEngine.SpatialTracking;
 using UnityEngine.XR;
 
 public class ControllerHistory : BasePoseProvider
@@ -10,7 +11,7 @@ public class ControllerHistory : BasePoseProvider
     public double TimeBackwards = 50;
     public XRNode DeviceToTrack;
 
-    public override bool TryGetPoseFromProvider(out Pose output)
+    public override PoseDataFlags GetPoseFromProvider(out Pose output)
     {
         var device = InputDevices.GetDeviceAtXRNode(DeviceToTrack);
         Vector3 position = Vector3.zero;
@@ -26,12 +27,12 @@ public class ControllerHistory : BasePoseProvider
             device.TryGetFeatureValue(CommonUsages.devicePosition, time, out position);          
             output.position = position;
             output.rotation = rotation;
-            return true;            
+            return PoseDataFlags.Position | PoseDataFlags.Rotation;            
         }        
         else
         {
             output = Pose.identity;
-            return false;
+            return PoseDataFlags.NoData;
         }
     }
 }
