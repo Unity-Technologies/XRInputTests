@@ -2448,11 +2448,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917166d83fe2e994db3bfb9effb5ee6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Instructions: 'This scene shows all of the InputManager button and axis joystick
-    controls.
+  m_Instructions: 'This test only applies to certain XR SDK implementations.
 
 
-    For the platform under test, verify that the buttons map correctly.'
+    If the sdk under test supports historic input, you should see multiple cubes follow
+    the path of your hand controllers.'
   m_StandaloneInstructions: 
   m_MobileInstructions: 
 --- !u!4 &1935420979
