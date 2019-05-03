@@ -12,6 +12,7 @@ public class NodeStateDisplay : MonoBehaviour
     public XRNode m_Node;
 
     public Text NodeTitle_Text;
+    public Image NodeTracked_Image;
 
     [Header("Translation Information")]
     public Image Position_Image;
@@ -60,6 +61,8 @@ public class NodeStateDisplay : MonoBehaviour
             Vector3 tempVector;
             Quaternion tempQuaternion;
 
+            SetImageColor(NodeTracked_Image, node.tracked);
+
             // Translation Information
             SetImageColor(Position_Image, node.TryGetPosition(out tempVector));
             Position_Text.text = Vector3ToFieldText(tempVector);
@@ -78,6 +81,8 @@ public class NodeStateDisplay : MonoBehaviour
         }
         else
         {
+            SetImageColor(NodeTracked_Image, false);
+
             // Translation Information
             SetImageColor(Position_Image, false);
             SetImageColor(Velocity_Image, false);
