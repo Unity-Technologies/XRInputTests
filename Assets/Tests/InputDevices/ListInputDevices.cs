@@ -32,10 +32,8 @@ public class ListInputDevices : MonoBehaviour
         InputDevices.GetDevices(inputDevices);
 
         foreach (InputDevice device in inputDevices)
-        {
-            displayTextAccumulator += ("<" + nodeNumber + "> " + " - Name: \"" + device.name + "\" - Role: \"" + device.role);
-
-            displayTextAccumulator += "\"\n";
+        {  
+            displayTextAccumulator += string.Format("<{0}> - Name: \"{1}\" - Role: \"{2}\" - Manufacturer: \"{3}\" Serial Number: \"{4}\"\n", nodeNumber, device.name, device.role, device.manufacturer, device.serialNumber);
             nodeNumber++;
         }
         nodeNamesText.text = displayTextAccumulator;
