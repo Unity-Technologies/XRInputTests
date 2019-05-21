@@ -2507,7 +2507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Node: 4
   NodeTitle_Text: {fileID: 906005253}
-  NodeTracked_Image: {fileID: 0}
+  NodeTracked_Image: {fileID: 633248578}
   Position_Image: {fileID: 695270304}
   Position_Text: {fileID: 1191147904}
   Velocity_Image: {fileID: 2109678500}
