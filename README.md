@@ -1,5 +1,7 @@
 # XR Input Test Suite
 
+The purpose of this test suite is to provide a common set of tools for observation of XR Input APIs.  Developers can use this test suite as they develop a new platform or troubleshoot a bug.  QA can use this test suite to investigate an input issue and easily create a minimum reproduction with a single press of a button.
+
 ## Running Tests the Editor
 One method for running a test is to find the appropriate scene, load it, and enter playmode.  Please also consider using teh XR Tests view.
 
