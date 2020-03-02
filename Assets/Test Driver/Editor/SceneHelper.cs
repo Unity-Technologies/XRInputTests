@@ -23,7 +23,7 @@ public class SceneHelper : AssetPostprocessor
         RenderSettings.skybox = null;
 
         var anchor = new GameObject("Camera Anchor");
-        anchor.tag = "Camera Anchor";
+        anchor.tag = "CameraAnchor";
 
         var instructions = new GameObject("Instructions");
         instructions.AddComponent<TestInstructions>();

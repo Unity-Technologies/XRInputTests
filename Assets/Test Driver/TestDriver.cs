@@ -87,7 +87,7 @@ public class TestDriver : MonoBehaviour
 
     private void UpdateInstructionsUI()
     {
-        SceneNameText.text = m_CurrentSceneIndex + " / " + (SceneManager.sceneCountInBuildSettings - 1) + " - " + SceneManager.GetActiveScene().name;
+        SceneNameText.text = (m_CurrentSceneIndex + 1) + " / " + (SceneManager.sceneCountInBuildSettings) + " - " + SceneManager.GetActiveScene().name;
 
         GameObject SceneDescriptor = GameObject.FindGameObjectWithTag("TestInstructions");
 
