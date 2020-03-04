@@ -1614,7 +1614,7 @@ MonoBehaviour:
     combination.  Your camera is positioned at (-1, 1, -1). This detaches your view
     from any nodes that would render at your camera''s position.  Every node will
     be offset by 1 meter in each direction from your camera''s position.  This scene
-    tests the XRLegacyInputHelpers package Tracked Pose Driver functionality
+    tests the XRLegacyInputHelpers package Tracked Pose Driver functionality.
 
 
     For
