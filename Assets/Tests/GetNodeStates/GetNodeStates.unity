@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -193,8 +194,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442419407}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -362,13 +364,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Instructions: 'This scene has one visual indicator for each valid XRNodeState
-    returned by UnityEngine.XR.InputTracking.GetNodeStates.  Your camera is positioned
-    at (-1, 1, -1).  This detaches your view from any nodes that would render at your
-    camera''s position.  Every node will be offset by 1 meter in each direction from
-    your camera''s position.
+    returned by UnityEngine.XR.InputTracking.GetNodeStates().  Your camera is positioned
+    at (-1, 1, -1).  This detaches your view from any nodes that would render at
+    your camera''s position.  Every node will be offset by 1 meter in each direction
+    from your camera''s position.
 
 
-    For the platform under test, verify that the proper XRNodes appear and track correctly.'
+    For the platform under test, verify that
+    the proper XRNodes appear and track correctly.'
   m_StandaloneInstructions: 
   m_MobileInstructions: 
 --- !u!4 &1978828606
