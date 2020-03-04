@@ -12,7 +12,7 @@ public class ControllerHistory : BasePoseProvider
     public double TimeBackwards = 50;
     public XRNode DeviceToTrack;
 
-    public override PoseDataFlags GetPoseFromProvider(out Pose output)
+    public override bool TryGetPoseFromProvider(out Pose output)
     {
         var device = InputDevices.GetDeviceAtXRNode(DeviceToTrack);
         Vector3 position = Vector3.zero;
@@ -28,12 +28,12 @@ public class ControllerHistory : BasePoseProvider
             device.TryGetFeatureValue(CommonUsages.devicePosition, time, out position);          
             output.position = position;
             output.rotation = rotation;
-            return PoseDataFlags.Position | PoseDataFlags.Rotation;            
+            return true;            
         }        
         else
         {
             output = Pose.identity;
-            return PoseDataFlags.NoData;
+            return false;
         }
     }
 }
